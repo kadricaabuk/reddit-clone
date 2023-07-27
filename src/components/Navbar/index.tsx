@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { User } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useSetRecoilState } from "recoil";
@@ -13,6 +13,7 @@ import RightContent from "./RightContent";
 import SearchInput from "./SearchInput";
 import router from "next/router";
 import useDirectory from "../../hooks/useDirectory";
+import { FaAdn } from "react-icons/fa";
 
 const Navbar: React.FC = () => {
   const [user] = useAuthState(auth);
@@ -34,13 +35,15 @@ const Navbar: React.FC = () => {
         cursor="pointer"
         onClick={() => onSelectMenuItem(defaultMenuItem)}
       >
-        <Image src="/images/redditFace.svg" height="30px" alt="REDDIT_FACE"/>
-        <Image
-          display={{ base: "none", md: "unset" }}
-          src="/images/redditText.svg"
-          height="46px"
-          alt="REDDIT_TEXT"
+        <Icon
+          as={FaAdn}
+          fontSize={30}
+          color="brand.100"
+          mr={2}
         />
+        <Text display={{ base: "none", md: "unset" }}>
+          Saphron Health
+        </Text>
       </Flex>
       {user && <Directory />}
       <SearchInput user={user as User} />

@@ -12,7 +12,7 @@ import moment from "moment";
 import { NextRouter } from "next/router";
 import { AiOutlineDelete } from "react-icons/ai";
 import { BsChat, BsDot } from "react-icons/bs";
-import { FaReddit } from "react-icons/fa";
+import { FaAdn } from "react-icons/fa";
 import {
   IoArrowDownCircleOutline,
   IoArrowDownCircleSharp,
@@ -137,7 +137,7 @@ const PostItem: React.FC<PostItemContentProps> = ({
                       mr={2}
                     />
                   ) : (
-                    <Icon as={FaReddit} fontSize={18} mr={1} color="blue.500" />
+                    <Icon as={FaAdn} fontSize={18} mr={1} color="blue.500" />
                   )}
                   <Link href={`r/${post.communityId}`}>
                     <Text
